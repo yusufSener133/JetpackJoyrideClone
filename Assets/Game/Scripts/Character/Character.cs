@@ -9,9 +9,9 @@ public class Character : MonoBehaviour
     [SerializeField] Animator _animator;
     [SerializeField] Rigidbody2D _rigidbody;
     [Header("Settings")]
-    [SerializeField] float _power = 100f;
-    [SerializeField] float _speed = 10f;
-    [SerializeField] float _posionLimit = 4f;
+    [SerializeField, Range(1, 5000)] float _power = 100f;
+    [SerializeField, Range(1, 100)] float _speed = 10f;
+    [SerializeField, Range(-10, 10)] float _posionUpLimit = 4f, _posionDownLimit = -4f;
 
     void Start()
     {
@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.tag == "Obstacle")
+        if (collision.collider.tag == "Enemy")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -27,20 +27,13 @@ public class Character : MonoBehaviour
     public void Fly()
     {
         _animator.Play("FlyUpAnim");
-
         _rigidbody.AddForce(Vector2.up * _power * Time.deltaTime);
         CheckLimits();
     }
 
-    public void MoveForward()
-    {
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
-    }
+    public void MoveForward() => transform.Translate(Vector2.right * _speed * Time.deltaTime);
 
-    public void Run()
-    {
-        _animator.Play("RunAnim");
-    }
+    public void Run() => _animator.Play("RunAnim");
 
     public void StopFlying()
     {
@@ -50,9 +43,9 @@ public class Character : MonoBehaviour
 
     private void CheckLimits()
     {
-        if (transform.position.y > _posionLimit)
+        if (transform.position.y > _posionUpLimit)
         {
-            transform.position = new Vector3(transform.position.x, _posionLimit);
+            transform.position = new Vector3(transform.position.x, _posionUpLimit);
             _rigidbody.velocity = Vector2.zero;
         }
     }
