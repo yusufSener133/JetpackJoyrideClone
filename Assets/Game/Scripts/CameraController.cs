@@ -5,15 +5,14 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField] Camera _camera;
-    [SerializeField] Character _character;
 
+    [SerializeField,Range(-8,8)] float _offSet = 5;
     Vector3 _distance;
-    private void Start()
-    {
-        _distance = _camera.transform.position - _character.transform.position;
-    }
+    
     void LateUpdate()
     {
-        _camera.transform.position = _character.transform.position + _distance;
+        var targetPos = _camera.transform.position;
+        targetPos.x = CharacterController.Instance.GetCharPos().x + _offSet;
+        _camera.transform.position = targetPos;
     }
 }

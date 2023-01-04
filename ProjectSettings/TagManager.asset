@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - Obstacle
+  - Enemy
+  - Coin
   layers:
   - Default
   - TransparentFX
@@ -40,6 +41,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1260503755
+    locked: 0
+  - name: Midground
+    uniqueID: 1714418461
+    locked: 0
+  - name: Foreground
+    uniqueID: 614098431
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

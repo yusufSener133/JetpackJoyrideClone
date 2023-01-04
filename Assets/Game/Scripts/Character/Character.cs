@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
     [Header("Settings")]
     [SerializeField, Range(1, 5000)] float _power = 100f;
     [SerializeField, Range(1, 100)] float _speed = 10f;
-    [SerializeField, Range(-10, 10)] float _posionUpLimit = 4f, _posionDownLimit = -4f;
+    [SerializeField, Range(-10, 10)] float _posionLimit = 4f;
 
     void Start()
     {
@@ -43,9 +43,9 @@ public class Character : MonoBehaviour
 
     private void CheckLimits()
     {
-        if (transform.position.y > _posionUpLimit)
+        if (transform.position.y > _posionLimit)
         {
-            transform.position = new Vector3(transform.position.x, _posionUpLimit);
+            transform.position = new Vector3(transform.position.x, _posionLimit);
             _rigidbody.velocity = Vector2.zero;
         }
     }

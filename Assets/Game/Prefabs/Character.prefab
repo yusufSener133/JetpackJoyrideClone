@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 473904541576748916}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,8 @@ MonoBehaviour:
   _rigidbody: {fileID: 473904541576748918}
   _power: 1500
   _speed: 1
-  _posionLimit: 4
+  _posionUpLimit: 4
+  _posionDownLimit: -4
 --- !u!1 &473904541611486758
 GameObject:
   m_ObjectHideFlags: 0

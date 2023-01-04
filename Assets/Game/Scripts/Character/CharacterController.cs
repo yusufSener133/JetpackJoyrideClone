@@ -29,5 +29,9 @@ public class CharacterController : MonoBehaviour
     {
         _character = character;
     }
+    public Vector3 GetCharPos()
+    {
+        return _character.transform.position;
+    }
 }
 
