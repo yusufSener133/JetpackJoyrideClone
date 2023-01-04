@@ -6,7 +6,8 @@ public class CharacterController : MonoBehaviour
 {
     private static CharacterController _instance;
     public static CharacterController Instance => _instance;
-    private Character _character;
+
+    Character _character;
     private void Awake()
     {
         _instance = this;
