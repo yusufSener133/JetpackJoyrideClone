@@ -8,6 +8,7 @@ public class CharacterController : MonoBehaviour
     public static CharacterController Instance => _instance;
 
     Character _character;
+
     private void Awake()
     {
         _instance = this;
@@ -22,16 +23,9 @@ public class CharacterController : MonoBehaviour
         {
             _character.StopFlying();
         }
-
         _character.MoveForward();
     }
-    public void Register(Character character)
-    {
-        _character = character;
-    }
-    public Vector3 GetCharPos()
-    {
-        return _character.transform.position;
-    }
+    public void Register(Character character) => _character = character;
+    public Vector3 GetCharPos() => _character.transform.position;
 }
 

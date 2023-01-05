@@ -10,7 +10,7 @@ public class LevelPartController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            LevelGenerator.Instance.AddToPool(_type,_levelPart);
+            LevelGenerator.Instance.AddToPool(_type, _levelPart);
             LevelGenerator.Instance.CreateRandomPart();
         }
     }

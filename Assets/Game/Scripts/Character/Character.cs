@@ -49,6 +49,4 @@ public class Character : MonoBehaviour
             _rigidbody.velocity = Vector2.zero;
         }
     }
-
-
 }

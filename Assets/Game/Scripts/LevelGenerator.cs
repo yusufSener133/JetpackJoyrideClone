@@ -18,8 +18,6 @@ public class LevelGenerator : MonoBehaviour
     {
         _instance = this;
 
-
-
         for (int i = 0; i < Parts.Length; i++)
         {
             var pool = new List<GameObject>();
@@ -52,7 +50,6 @@ public class LevelGenerator : MonoBehaviour
         _lastPos.x += 41;
         part.transform.position = _lastPos;
     }
-
     public void AddToPool(int type, GameObject part)
     {
         _pools[type].Add(part);
