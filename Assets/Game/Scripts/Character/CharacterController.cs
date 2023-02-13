@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
+    #region Singleton
     private static CharacterController _instance;
     public static CharacterController Instance => _instance;
+    #endregion
 
     Character _character;
 

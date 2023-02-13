@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
+    #region Singleton
     static LevelGenerator _instance;
     public static LevelGenerator Instance => _instance;
-
+    #endregion
 
     [SerializeField] GameObject[] Parts;
     [SerializeField] int _poolSize = 3;
